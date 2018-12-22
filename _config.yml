@@ -1,23 +1,24 @@
-title: ""
-author: ""
+title: "Akihiro Matsukawa"
+author: "Akihiro Matsukawa"
 description: ""
 
 # Jekyll settings
 permalink: /:title/          # see https://jekyllrb.com/docs/permalinks/
-paginate: 2                  # number of articles per page, remove to disable pagination
+paginate: 1                  # number of articles per page, remove to disable pagination
 excerpt_separator: "\n\n\n"  # indicates the end of the excerpt by two blank lines
 
 # Theme settings
-show_excerpts: true          # show article previews on the home page instead of headlines
+show_excerpts: false          # show article previews on the home page instead of headlines
 date_format: "%B %d, %Y"     # see http://shopify.github.io/liquid/filters/date/
 dark_theme: false            # enables dark mode
 dark_header: false           # uses dark header whether dark_theme is enabled or not
 minimal_theme: false         # radically minimalistic theme
+mathjax: true
 
 navigation:                  # show navigation links in the header
   - index.html
-  - archive.md
   - about.md
+  - publications.md
 
 #icons:                       # show icons in the header, for all possible icons see http://fontawesome.io/icons/
 #  envelope: ""
@@ -28,7 +29,7 @@ comments:                    # embed disqus or isso comments
 #  disqus: ""
 #  isso: ""
 
-plugins: 
+plugins:
  - jekyll-feed
  - jekyll-paginate
  - jekyll-default-layout
