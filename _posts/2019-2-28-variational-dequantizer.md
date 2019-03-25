@@ -19,12 +19,21 @@ everywhere else. This is an unnatural distribution that is unlikely to appear in
 simplicity, let's assume our data is images, and has been quantized to the $$[0, 255]$$ in 
 increments of 1.
 
+<p align="center"> 
+<img src="../assets/nodeq.png">
+</p>
+
+
 What might we do to prevent these spikse at the quantization centers? You might intuitively think to
 add some noise to smooth the values. $$u \sim Uniform(0, 1)$$ seems like a decent choice, since we just
 "fill" those quantization buckets equally. This is in fact the 
 most common approach to dequantize discrete values for a continuous distribution [2].
 However, this approach introduces flat step-wise regions into the data distribution, and while it's better
-than having spikes, it is also unnatural.
+than having spikes, it is also unnatural and difficult to fit most parametric distributions.
+
+<p align="center"> 
+<img src="../assets/uniform_deq.png">
+</p>
 
 How do we improve this? We still want to add some smoothing noise $$u$$, but we don't want it to 
 be uniform noise around the quantization centers. So let's make it a distribution that is dependent on
@@ -62,6 +71,13 @@ What we've done here is introduced a variational distribution to model the noise
 flow for $$r(u|x)$$, we can train the model and dequantizer together using the path-wise gradient estiamtor 
 similar to the reparameterization trick in VAEs. Note that the using uniform noise to dequantize is simply choosing
 it to be $$r$$.
+
+<p align="center"> 
+<img src="../assets/flowpp_deq.png">
+</p>
+
+By jointly training the noise distribution model and the data distribution model, we can find a dequantization method that is both
+a valid upper bound and is more natural for the data distribution to fit to.
 
 
 ### References
