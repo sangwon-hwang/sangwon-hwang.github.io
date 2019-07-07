@@ -18,3 +18,12 @@ ICML 2019
 Eric Nalisnick, Akihiro Matsukawa, Yee Whye Teh, Dilan Gorur, Balaji Lakshminarayanan <br>
 ICLR 2019
 
+[Cloud-Based Robot Grasping with the Google Object Recognition Engine](https://goldberg.berkeley.edu/pubs/Grasping-with-Google-Goggles-icra-2013.pdf) <br>
+Ben Kehoe, Akihiro Matsukawa, Sal Candido, James Kuffner, Ken Goldberg <br>
+ICRA 2013
+
+
+[Visual Tracking of Human Visitors under Variable-Lighting Conditions for a Responsive Audio Art Installation](https://goldberg.berkeley.edu/pubs/acc-2012-visual-tracking-final.pdf) <br>
+Andrew B. Godbehere, Akihiro Matsukawa, Ken Goldberg <br>
+ACC 2012.
+
