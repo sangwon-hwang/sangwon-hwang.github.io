@@ -32,6 +32,14 @@ comments:                    # embed disqus or isso comments
   disqus: "blog-19lbnvrzrc"
 #  isso: ""
 
+# Build settings
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+encoding: "utf-8"
+
 plugins:
  - jekyll-feed
  - jekyll-paginate
