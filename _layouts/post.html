@@ -8,6 +8,8 @@ layout: default
 <!--     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time> -->
   </header>
 {{ content }}
+
+<!-- 여기서부터는 disqus -->
   {% if site.comments.isso %}
   <hr><div id="isso-thread"></div>
   {% endif %}
