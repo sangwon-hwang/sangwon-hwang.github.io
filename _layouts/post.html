@@ -21,7 +21,7 @@ layout: default
 {% if page.previous.url or page.next.url %}
 
 
-<!-- footer 설정 이전 아티클과 다음 아 -->
+<!-- footer 설정 이전 아티클과 다음 아티클 -->
 <footer>
   {% if page.next.url %}<a class="gray" href="{{ page.next.url | relative_url }}">« {{ page.next.title }}</a>{% else %}<span></span>{% endif %}
   {% if page.previous.url %}<a class="gray" href="{{ page.previous.url | relative_url }}">{{ page.previous.title }} »</a>{% else %}<span></span>{% endif %}
