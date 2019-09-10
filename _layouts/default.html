@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 
+  <head>
+    {% if page.use_math %}
+      {% include mathjax_support.html %}
+    {% endif %}
+  </head>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87944295-2"></script>
 <script>
