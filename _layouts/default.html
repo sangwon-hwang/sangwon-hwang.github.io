@@ -24,12 +24,12 @@ Global site tag (gtag.js) - Google Analytics
 <meta name="author" content="{{ page.author | default: site.author | escape}}">
 <meta name="generator" content="Jekyll v{{ jekyll.version }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
-<link rel="stylesheet" href="{{ "/assets/index.css" | relative_url }}">
-<link rel="stylesheet" href="{{ "/assets/classes.css" | relative_url }}">
+<!-- <link rel="stylesheet" href="{{ "/assets/index.css" | relative_url }}"> -->
+<!-- <link rel="stylesheet" href="{{ "/assets/classes.css" | relative_url }}"> -->
 {% if site.minimal_theme %}
 <link rel="stylesheet" href="{{ "/assets/minimal.css" | relative_url }}">
 {% else %}
-<link rel="stylesheet" href="{{ "/assets/default.css" | relative_url }}">
+<!-- <link rel="stylesheet" href="{{ "/assets/default.css" | relative_url }}"> -->
 {% endif %}
 {% if site.plugins contains "jekyll-feed" %}<link rel="alternate" type="application/atom+xml" href="{{ "/feed.xml" | relative_url }}" title="{{ site.title }}" />{% endif %}
 {% if site.icons %}<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">{% endif %}
