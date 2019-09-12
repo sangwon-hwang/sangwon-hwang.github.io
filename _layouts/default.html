@@ -39,6 +39,26 @@
     });
   </script>
 
+<script type="text/javascript">
+  window.MathJax = {
+    AuthorInit: function () {
+      MathJax.Hub.Register.StartupHook("Begin",function () {
+        MathJax.Hub.Queue(function () {
+          var math = document.getElementById("rescale");
+          var w = math.offsetWidth, W = math.parentNode.offsetWidth-40;
+          if (w > W) {
+            math.style.fontSize = (95*W/w)+"%";
+            MathJax.Hub.getAllJax(math)[0].Rerender();
+          }
+        });
+      });
+    },
+    jax: ["input/TeX","output/HTML-CSS","output/NativeMML"],
+    extensions: ["tex2jax.js"],
+  };
+</script>
+
+
 <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
 <meta charset="{{ site.encoding }}">
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
