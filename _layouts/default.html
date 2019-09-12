@@ -16,6 +16,24 @@
   gtag('config', 'UA-87944295-2');
 </script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      CommonHTML: {
+        styles: {
+           ".mjx-test.mjx-test-inline": {
+              display: "inline-table!important",
+              'margin-right': 0
+          },
+          ".mjx-test-inline .mjx-left-box": {
+              display: "table-cell!important",
+              width: "10000em!important",
+              "min-width": 0, "max-width": "none",
+              padding: 0, border: 0, margin: 0, float: null
+          }
+        }
+      }
+    });
+  </script>
 
 <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
 <meta charset="{{ site.encoding }}">
