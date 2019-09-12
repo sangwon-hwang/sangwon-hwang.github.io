@@ -8,6 +8,7 @@ layout: default
     {%- assign date_format = site.date_format | default: "%B %d, %Y" -%}
     <h1><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1> <!-- _config.yml title -->
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </header>
   {{ page.excerpt }}
   {% unless page.excerpt == page.content %}
