@@ -19,172 +19,29 @@
   gtag('config', 'UA-87944295-2');  
 </script>
 
-<!-- <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      CommonHTML: {
-        styles: {
-           ".mjx-test.mjx-test-inline": {
-              display: "inline-table!important",
-              'margin-right': 0
-          },
-          ".mjx-test-inline .mjx-left-box": {
-              display: "table-cell!important",
-              width: "10000em!important",
-              "min-width": 0, "max-width": "none",
-              padding: 0, border: 0, margin: 0, float: null
-          }
-        }
-        linebreaks: {
-          automatic: true
-          }
-
-      }
-    });
-  </script>
-
-<script type="text/javascript">
-  window.MathJax = {
-    AuthorInit: function () {
-      MathJax.Hub.Register.StartupHook("Begin",function () {
-        MathJax.Hub.Queue(function () {
-          var math = document.getElementById("rescale");
-          var w = math.offsetWidth, W = math.parentNode.offsetWidth-40;
-          if (w > W) {
-            math.style.fontSize = (95*W/w)+"%";
-            MathJax.Hub.getAllJax(math)[0].Rerender();
-          }
-        });
-      });
-    },
-    jax: ["input/TeX","output/HTML-CSS","output/NativeMML"],
-    extensions: ["tex2jax.js"],
-  };
-</script>
-
- -->
-
-<script>
-
-window.MathJax = {
-  jax: ["input/TeX","output/CommonHTML"],
-  extensions: ["tex2jax.js", "asciimath2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js"],
-  TeX: {
-    extensions: ["AMSmath.js", "AMSsymbols.js", "autoload-all.js"]
-  },
-  tex2jax: {
-    inlineMath: [
-      ['$', '$'],
-      ["\\(", "\\)"]
-    ],
-    processEscapes: true
-  },
-  showProcessingMessages: false,
-  messageStyle: "none",
-  menuSettings: { zoom: "Click" },
-  AuthorInit: function() {
-    MathJax.Hub.Register.StartupHook("End", function() {
-            var timeout = false, // holder for timeout id
-            delay = 250; // delay after event is "complete" to run callback
-            var shrinkMath = function() {
-              var dispFormulas = document.getElementsByClassName("formula");
-              if (dispFormulas){
-                // caculate relative size of indentation
-                var contentTest = document.getElementsByTagName("body")[0];
-                var nodesWidth = contentTest.offsetWidth;
-                // if you have indentation
-                var mathIndent = MathJax.Hub.config.displayIndent; //assuming px's
-                var mathIndentValue = mathIndent.substring(0,mathIndent.length - 2);
-                for (var i=0; i<dispFormulas.length; i++){
-                  var dispFormula = dispFormulas[i];
-                  var wrapper = dispFormula.getElementsByClassName("MathJax_Preview")[0].nextSibling;
-                  var child = wrapper.firstChild;
-                  wrapper.style.transformOrigin = "center"; //or top-left if you left-align your equations
-                  var oldScale = child.style.transform;
-                  var newValue = Math.min(0.80*dispFormula.offsetWidth / child.offsetWidth,1.0).toFixed(2);
-                  var newScale = "scale(" + newValue + ")";
-                  if(!(newScale === oldScale)){
-                    wrapper.style.transform = newScale;
-                    wrapper.style["margin-left"]= Math.pow(newValue,4)*mathIndentValue + "px";
-                    var wrapperStyle = window.getComputedStyle(wrapper);
-                    var wrapperHeight = parseFloat(wrapperStyle.height);
-                    wrapper.style.height = "" + (wrapperHeight * newValue) + "px";
-                    if(newValue === "1.00"){
-                      wrapper.style.cursor = "";
-                      wrapper.style.height = "";
-                    }
-                    else {
-                      wrapper.style.cursor = "zoom-in";
-                    }
-                  }
-
-                }
-            }
-            };
-            shrinkMath();
-            window.addEventListener('resize', function() {
-              clearTimeout(timeout);
-              timeout = setTimeout(shrinkMath, delay);
-            });
-          });
-  }
-};
-
-(function(d, script) {
-  script = d.createElement('script');
-  script.type = 'text/javascript';
-  script.async = true;
-  script.onload = function() {
-    // remote script has loaded
-  };
-  script.src = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js';
-  d.getElementsByTagName('head')[0].appendChild(script);
-}(document));
-  
-</script>
-
-<script>
-  
-  window.MathJax = {
-  chtml: {
-    scale: 1,                      // global scaling factor for all expressions
-    minScale: .3,                  // smallest scaling factor to use
-    matchFontHeight: true,         // true to match ex-height of surrounding font
-    mtextInheritFont: true,       // true to make mtext elements use surrounding font
-    merrorInheritFont: true,       // true to make merror text use surrounding font
-    mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
-    skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
-    exFactor: .5,                  // default size of ex in em units
-    displayAlign: 'left',        // default for indentalign when set to 'auto'
-    displayIndent: '0'             // default for indentshift when set to 'auto'
-  }
-};
-</script>
-
-
-
-
 
 <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
 <meta charset="{{ site.encoding }}">
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 <meta name="author" content="{{ page.author | default: site.author | escape}}">
 <meta name="generator" content="Jekyll v{{ jekyll.version }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
-<!-- <link rel="stylesheet" href="{{ "/assets/index.css" | relative_url }}">
-<link rel="stylesheet" href="{{ "/assets/classes.css" | relative_url }}"> -->
+
+<link rel="stylesheet" href="{{ "/assets/index.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/classes.css" | relative_url }}">
 {% if site.minimal_theme %}
-<!-- <link rel="stylesheet" href="{{ "/assets/minimal.css" | relative_url }}"> -->
+<link rel="stylesheet" href="{{ "/assets/minimal.css" | relative_url }}">
 {% else %}
-<!-- <link rel="stylesheet" href="{{ "/assets/default.css" | relative_url }}"> -->
+<link rel="stylesheet" href="{{ "/assets/default.css" | relative_url }}">
 {% endif %}
 {% if site.plugins contains "jekyll-feed" %}<link rel="alternate" type="application/atom+xml" href="{{ "/feed.xml" | relative_url }}" title="{{ site.title }}" />{% endif %}
-<!-- {% if site.icons %}<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">{% endif %} -->
-<!-- {% if page.mathjax or site.mathjax %}
+{% if site.icons %}<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">{% endif %}
+{% if page.mathjax or site.mathjax %}
 <link rel="stylesheet" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y">
 <script defer crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx"></script>
 <script defer crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy"></script>
-{% endif %} -->
+{% endif %}
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 {% if site.comments.disqus %}<script src="//{{ site.comments.disqus }}.disqus.com/embed.js" async></script>{% endif %}
